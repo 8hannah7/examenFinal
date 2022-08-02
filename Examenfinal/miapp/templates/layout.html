@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es"
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block tittle %}
+            {{titulo}}
+            {% endblock %}
+            Examen Final
+        </title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+        </head>
+    <body>
+        <header style="background-color:#275087;">
+            <div id="logotipo">
+                <img src="/static/images/logotipo.png" />
+                <h1>Universidad Nacional Tecnologica De Lima Sur</h1>
+            </div>
+        </header>
+        <nav>
+            <hr/>
+            <ul>
+                <li>
+                    <a href="{% url 'listar_course' %}">Cursos</a>
+                </li>
+                <li>
+                    <a href="{% url 'create_course' %}">Crear curso</a>
+                </li>
+                <li>
+                    <a href="/carreras">Carreras</a>
+                </li>
+                <li>
+                    <a href="/crearcarrera">Crear Carrera</a>
+                </li>
+            </ul>
+            <hr/>
+        </nav>           
+            <div id="content">
+                <div class="box">
+                
+                    {% block content %}
+                        
+                    {% endblock %}
+    
+                </div>
+            </div>
+            <footer>
+                UNTELS  &COPY; Condori / Acuña / Trigo
+            </footer>
+    </body>
+</html>

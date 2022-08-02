@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+ 
+{% block title %}
+    {{titulo}}
+{% endblock %}
+ 
+{% block content %}
+    <h1 class="title">{{titulo}} </h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <ul>
+        {% for course in course %}
+   <li>
+      <h4>{{course.id}} - {{course.name}}</h4> 
+
+      <p>
+         {{course.contenido}}<br>
+         <a href="{% url 'eliminar_course' id=course.id %}">Eliminar</a>
+      </p>
+   </li>
+{% endfor %}
+    </ul>
+{% endblock %}
